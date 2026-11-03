@@ -1,0 +1,33 @@
+{
+  "name": "serial-studio",
+  "displayName": "Serial Studio",
+  "version": "1.0.0",
+  "description": "Read live telemetry and operate a running Serial Studio instance through its MCP server: every API command as an annotated tool, the live frame as a resource, and a skill that states the prerequisite and the safe order of work.",
+  "author": {
+    "name": "Alex Spataru",
+    "email": "alex@serial-studio.com",
+    "url": "https://serial-studio.com"
+  },
+  "homepage": "https://serial-studio.com",
+  "repository": "https://github.com/Serial-Studio/claude-plugin",
+  "license": "GPL-3.0-or-later",
+  "keywords": [
+    "serial-studio",
+    "telemetry",
+    "serial",
+    "uart",
+    "modbus",
+    "can-bus",
+    "dashboard",
+    "hardware",
+    "mcp"
+  ],
+  "userConfig": {
+    "python": {
+      "type": "string",
+      "title": "Python launcher",
+      "description": "The command that starts Python 3 on this computer: python3 on macOS, Linux and Windows with the Store Python; python or py for a python.org install on Windows.",
+      "default": "python3"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "serial-studio",
+  "owner": {
+    "name": "Alex Spataru",
+    "email": "alex@serial-studio.com"
+  },
+  "metadata": {
+    "description": "Serial Studio's plugin for Claude Code and Cowork",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "serial-studio",
+      "source": "./",
+      "description": "Read live telemetry and operate a running Serial Studio instance through its MCP server.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Alex Spataru",
+        "email": "alex@serial-studio.com"
+      },
+      "homepage": "https://serial-studio.com",
+      "repository": "https://github.com/Serial-Studio/claude-plugin",
+      "license": "GPL-3.0-or-later",
+      "keywords": [
+        "serial-studio",
+        "telemetry",
+        "mcp"
+      ],
+      "category": "productivity"
+    }
+  ]
+}
