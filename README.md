@@ -45,6 +45,7 @@ For development, from a checkout of this repository:
 
 ```bash
 claude --plugin-dir /path/to/claude-plugin
+python3 -m unittest discover -s tests   # no running Serial Studio needed
 ```
 
 ## Usage
@@ -53,7 +54,7 @@ With Serial Studio running and connected to a device, ask Claude for what you wa
 or change. Typical first requests:
 
 - "Is Serial Studio connected, and to what?"
-- "Show me the latest values of every dataset."
+- "What are the latest temperature readings?"
 - "Which groups and datasets does the current project define?"
 - "Set the UART baud rate to 115200 and reconnect."
 
@@ -72,9 +73,10 @@ your computer.
 
 The bridge forwards newline-delimited JSON-RPC between Claude's standard input and output
 and `127.0.0.1:7777`. If Serial Studio is not running or the API server is off, the bridge
-retries for six seconds, exits with status 1, and its last log line names the setting to
-enable, so Claude's MCP status shows the cause. A connection that drops mid-session ends the
-bridge; reconnect the MCP server after restarting Serial Studio.
+stays up and keeps retrying: Claude sees one status tool, every other call returns the
+setting to enable, and the last log line names it too. As soon as Serial Studio answers, its
+tools appear without a reconnect. The same applies when Serial Studio closes or restarts
+mid-session, and a call in flight at that moment fails with the same message.
 
 ## Privacy Policy
 
